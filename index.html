@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Empire: Start Your Business With Zero Investment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #5B48CC; /* Purple main */
+            --secondary-color: #7966FF; /* Purple gradient */
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
+            --text-color: #333;
+            --light-text-color: #666;
+            --white-color: #fff;
+            --bg-light: #f7f9fc;
+            --shadow-soft: 0 4px 15px rgba(0,0,0,0.08);
+            --border-radius-large: 12px;
+            --border-radius-small: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--white-color); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+        h1,h2 { font-weight: 800; line-height: 1.1; }
+        h2 { font-size: 2rem; text-align: center; margin-bottom: 40px; color: var(--primary-color); }
+
+        /* CTA Buttons default (purple) */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .cta-button:hover { transform: translateY(-2px); }
+
+        /* WhatsApp buttons only */
+        .cta-button[href*="wa.me"], .whatsapp-float-btn {
+            background: linear-gradient(45deg, var(--whatsapp-green), var(--whatsapp-dark)) !important;
+            color: white !important;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+        }
+
+        .cta-button[href*="wa.me"]:hover, .whatsapp-float-btn:hover {
+            background-color: var(--whatsapp-dark) !important;
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        #hero { background-color: var(--bg-light); padding: 80px 20px; text-align: center; }
+        .hero-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+        .hero-text { text-align: center; }
+        .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary-color); }
+        .hero-text p { font-size: 1.2rem; font-weight: 400; color: var(--light-text-color); margin-bottom: 30px; }
+        .ebook-mockup img { max-width: 280px; width: 100%; height: auto; border-radius: var(--border-radius-large); box-shadow: var(--shadow-soft); }
+
+        /* Benefits */
+        #benefits { background-color: var(--white-color); }
+        .benefits-list { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
+        .benefits-list li { font-size: 1.1rem; margin-bottom: 15px; padding: 15px; border-left: 5px solid var(--secondary-color); background-color: var(--bg-light); border-radius: var(--border-radius-small); box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-weight: 600; }
+        .benefits-list li i { color: var(--primary-color); margin-right: 15px; font-size: 1.2rem; }
+
+        /* Features */
+        #features { background-color: var(--bg-light); text-align: center; }
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .feature-card { background-color: var(--white-color); padding: 30px; border-radius: var(--border-radius-large); box-shadow: var(--shadow-soft); text-align: center; transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .feature-card i { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .feature-card p { font-size: 0.95rem; color: var(--light-text-color); }
+
+        /* Price Section */
+        #price { text-align: center; padding: 40px 0; background-color: var(--white-color); }
+        .price-box { background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); color: var(--white-color); padding: 40px 30px; border-radius: var(--border-radius-large); max-width: 450px; margin: 0 auto 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .original-price { font-size: 1.2rem; font-weight: 600; text-decoration: line-through; opacity: 0.8; margin-bottom: 5px; }
+        .launch-offer { font-size: 3rem; font-weight: 800; margin-bottom: 20px; line-height: 1; }
+        .launch-offer span { font-size: 1.8rem; font-weight: 600; margin-right: 5px; }
+
+        #price .cta-button { background: var(--white-color); color: var(--primary-color); box-shadow: none; font-size: 1.2rem; max-width: 280px; margin-top: 0; }
+        #price .cta-button[href*="wa.me"] { background: linear-gradient(45deg, var(--whatsapp-green), var(--whatsapp-dark)) !important; color: white !important; }
+
+        /* Testimonials */
+        #testimonials { background-color: var(--bg-light); }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .testimonial-card { background-color: var(--white-color); padding: 25px; border-radius: var(--border-radius-large); box-shadow: var(--shadow-soft); font-style: italic; position: relative; }
+        .testimonial-card p { font-size: 1rem; margin-bottom: 15px; color: var(--light-text-color); }
+        .testimonial-card .author { font-style: normal; font-weight: 700; color: var(--primary-color); display: block; margin-top: 10px; }
+
+        /* FAQ */
+        #faq { background-color: var(--white-color); }
+        .faq-item { border: 1px solid #ddd; border-radius: var(--border-radius-small); margin-bottom: 15px; overflow: hidden; }
+        .faq-question { background-color: var(--bg-light); padding: 15px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { padding: 15px; border-top: 1px solid #eee; color: var(--light-text-color); display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-question i { transition: transform 0.3s ease; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        /* Footer */
+        #footer { background-color: var(--primary-color); color: var(--white-color); text-align: center; padding: 20px 0; font-size: 0.9rem; }
+
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923456576446" class="whatsapp-float-btn" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Start  Ecommerce With <strong>Zero Investment</strong></h1>
+                <p>A step-by-step beginner guide to launch your online business in Pakistan.</p>
+                <a href="https://wa.me/923456576446" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Get Instant Access Now
+                </a>
+            </div>
+            <div class="ebook-mockup"></div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits">
+        <div class="container">
+            <h2>Unlock Your E-Commerce Potential</h2>
+            <ul class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> Step-by-step blueprint for absolute beginners.</li>
+                <li><i class="fas fa-check-circle"></i> No experience needed to start your online journey.</li>
+                <li><i class="fas fa-check-circle"></i> Learn how to start with zero investment.</li>
+                <li><i class="fas fa-check-circle"></i> Strategies to find winning products that sell instantly.</li>
+                <li><i class="fas fa-check-circle"></i> Proven plan to get your first 100 orders fast.</li>
+                <li><i class="fas fa-check-circle"></i> A-Z guide for sourcing, marketing & logistics.</li>
+                <li><i class="fas fa-check-circle"></i> Free 1-month action plan.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <h2>What You'll Find Inside E-Commerce Empire</h2>
+            <div class="features-grid">
+                <div class="feature-card"><i class="fas fa-book"></i><h3>Beginner Blueprint</h3><p>A clear, actionable map from idea to launch.</p></div>
+                <div class="feature-card"><i class="fas fa-box-open"></i><h3>Zero Inventory Model</h3><p>Master dropshipping & no-inventory systems.</p></div>
+                <div class="feature-card"><i class="fas fa-chart-line"></i><h3>Product Research</h3><p>Find high-demand products that sell fast.</p></div>
+                <div class="feature-card"><i class="fas fa-truck-moving"></i><h3>COD Setup</h3><p>Easy logistics & cash-on-delivery systems.</p></div>
+                <div class="feature-card"><i class="fas fa-share-alt"></i><h3>Marketing Strategy</h3><p>Free & low-cost traffic systems.</p></div>
+                <div class="feature-card"><i class="fas fa-rocket"></i><h3>Scale Up</h3><p>Advanced automation & scaling secrets.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price -->
+    <section id="price">
+        <div class="container">
+            <h2>Ready to Build Your E-Commerce Empire?</h2>
+            <div class="price-box">
+                <p class="original-price">Original Price: Rs. 899</p>
+                <p class="launch-offer"><span>Rs.</span> 299</p>
+                <p>Limited Time Launch Offer!</p>
+                <a href="https://wa.me/923456576446" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Buy Now for Rs. 299
+                </a>
+            </div>
+            <p>Payment via JazzCash, EasyPaisa, Bank Transfer.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Readers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--primary-color); position:absolute; top:10px; left:15px;"></i><p>"This book is a goldmine! Helped me launch my first store in a week."</p><span class="author">— Bilal A.</span></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--primary-color); position:absolute; top:10px; left:15px;"></i><p>"Got my first 10 orders in 3 days. Perfect for beginners."</p><span class="author">— Sara M.</span></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left" style="color:var(--primary-color); position:absolute; top:10px; left:15px;"></i><p>"The COD & logistics section saved me months."</p><span class="author">— Zeeshan K.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item"><div class="faq-question">Is this guide for complete beginners?<i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. It is built for someone starting from zero.</div></div>
+                <div class="faq-item"><div class="faq-question">How can I start with zero investment?<i class="fas fa-chevron-down"></i></div><div class="faq-answer">Through dropshipping & affiliate models explained inside.</div></div>
+                <div class="faq-item"><div class="faq-question">How do I pay?<i class="fas fa-chevron-down"></i></div><div class="faq-answer">JazzCash, EasyPaisa, or Bank Transfer.</div></div>
+                <div class="faq-item"><div class="faq-question">Is the guide for Pakistan?<i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes. Everything is tailored for the Pakistani market.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 E-Commerce Empire. All rights reserved.</p>
+            <a href="https://wa.me/923456576446" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
